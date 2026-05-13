@@ -1,0 +1,303 @@
+/* welcome.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Poppins', sans-serif;
+  min-height:100vh;
+  overflow-x:hidden;
+
+  background:
+  linear-gradient(rgba(0,0,0,0.45),
+  rgba(0,0,0,0.45)),
+  url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1600&auto=format&fit=crop');
+
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+}
+
+/* Floating Hearts */
+
+.hearts::before,
+.hearts::after{
+  content:"❤";
+  position:fixed;
+  font-size:35px;
+  color:#ff4d6d;
+  animation:float 8s linear infinite;
+}
+
+.hearts::before{
+  left:10%;
+  bottom:-50px;
+}
+
+.hearts::after{
+  right:10%;
+  animation-delay:3s;
+}
+
+/* Main Card */
+
+.wedding-card{
+  width:100%;
+  max-width:850px;
+
+  background:rgba(255,255,255,0.12);
+
+  border:1px solid rgba(255,255,255,0.2);
+
+  backdrop-filter:blur(10px);
+
+  border-radius:30px;
+
+  padding:40px 30px;
+
+  text-align:center;
+
+  color:#fff;
+
+  animation:fadeIn 2s ease;
+
+  box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+.top-text{
+  letter-spacing:3px;
+  text-transform:uppercase;
+  font-size:14px;
+}
+
+.couple-name{
+  font-family:'Great Vibes', cursive;
+  font-size:90px;
+  margin:15px 0;
+  font-weight:normal;
+}
+
+.couple-name span{
+  color:#ffd700;
+}
+
+.invite-text{
+  font-size:20px;
+  line-height:1.8;
+  margin-bottom:30px;
+}
+
+/* Couple Image */
+
+.couple-img img{
+  width:230px;
+  height:230px;
+  object-fit:cover;
+  border-radius:50%;
+  border:5px solid rgba(255,255,255,0.4);
+
+  animation:pulse 3s infinite;
+}
+
+/* Details */
+
+.details{
+  margin-top:35px;
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(200px,1fr));
+
+  gap:20px;
+}
+
+.box{
+  background:rgba(255,255,255,0.1);
+
+  padding:20px;
+
+  border-radius:20px;
+
+  transition:0.4s;
+}
+
+.box:hover{
+  transform:translateY(-5px);
+}
+
+.box h2{
+  color:#ffd700;
+  margin-bottom:10px;
+}
+
+.box p{
+  line-height:1.7;
+}
+
+/* Countdown */
+
+.count-title{
+  margin-top:40px;
+  margin-bottom:25px;
+  color:#ffd700;
+}
+
+.countdown{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:18px;
+}
+
+.time-box{
+  width:110px;
+  height:110px;
+
+  background:rgba(255,255,255,0.12);
+
+  border-radius:25px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  animation:zoom 2s infinite alternate;
+}
+
+.time-box span{
+  font-size:35px;
+  font-weight:bold;
+  color:#ffd700;
+}
+
+.time-box small{
+  margin-top:5px;
+}
+
+/* Buttons */
+
+.buttons{
+  margin-top:3px;
+
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:20px;
+}
+
+.btn{
+  text-decoration:none;
+
+  padding:15px 35px;
+
+  border-radius:50px;
+
+  color:#fff;
+
+  border:2px solid rgba(255,255,255,0.5);
+
+  background:rgba(255,255,255,0.12);
+
+  transition:0.4s;
+}
+
+.btn:hover{
+  background:#ffd700;
+  color:#000;
+  transform:scale(1.05);
+}
+
+/* Animations */
+
+@keyframes fadeIn{
+
+  from{
+    opacity:0;
+    transform:translateY(30px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes pulse{
+
+  0%{
+    transform:scale(1);
+  }
+
+  50%{
+    transform:scale(1.05);
+  }
+
+  100%{
+    transform:scale(1);
+  }
+}
+
+@keyframes zoom{
+
+  from{
+    transform:translateY(0);
+  }
+
+  to{
+    transform:translateY(-8px);
+  }
+}
+
+@keyframes float{
+
+  0%{
+    transform:translateY(0);
+    opacity:1;
+  }
+
+  100%{
+    transform:translateY(-110vh);
+    opacity:0;
+  }
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+  .couple-name{
+    font-size:60px;
+  }
+
+  .invite-text{
+    font-size:16px;
+  }
+
+  .time-box{
+    width:85px;
+    height:85px;
+  }
+
+  .time-box span{
+    font-size:26px;
+  }
+
+  .wedding-card{
+    padding:30px 20px;
+  }
+
+  .couple-img img{
+    width:180px;
+    height:180px;
+  }
+}
